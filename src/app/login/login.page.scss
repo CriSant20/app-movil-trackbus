@@ -1,0 +1,165 @@
+/* Base styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #3e3eb1; /* Light grey background */
+  }
+  
+  /* Container */
+  .container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;;
+  }
+  
+  /* Header */
+  .header {
+    background: linear-gradient(45deg, #4CAF50, #81C784); /* Green gradient */
+    color: rgb(163, 77, 77);
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Logo */
+  .logo {
+    width: 150px;
+    height: 150px;
+    margin: 20px 0;
+    border-radius: 50%;
+    border: 5px solid #fff;
+  }
+  
+  /* Form */
+  .form {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #242020;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    background: #1b1a1a;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Form Hover Effect */
+  .form:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Input fields */
+  .form input[type="email"],
+  .form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #c49a9a;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: border 0.3s ease;
+  }
+  
+  /* Input focus effect */
+  .form input:focus {
+    border: 1px solid #4CAF50;
+    background-color: #fff;
+  }
+  
+  /* Button */
+  .form button {
+    background-color: #4CAF50; /* Green color */
+    color: rgb(124, 38, 38);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form button:hover {
+    background-color: #388E3C; /* Darker green on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Forgot Password Text */
+  .forgot-password {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .forgot-password ion-button {
+    color: #2196F3; /* Blue color */
+    font-size: 14px;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+  
+  .forgot-password ion-button:hover {
+    color: #1565C0; /* Darker blue on hover */
+  }
+  
+  /* Social Media Buttons */
+  .social-media {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .social-media ion-button {
+    margin: 0 10px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .social-media ion-icon {
+    font-size: 30px;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  
+  .social-media ion-button:hover ion-icon {
+    color: #4CAF50; /* Change icon color on hover */
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #2196F3; /* Blue color */
+    color: rgb(167, 105, 105);
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Media Query for smaller devices */
+  @media (max-width: 600px) {
+    .logo {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .form {
+      width: 90%;
+    }
+  
+    .footer {
+      position: static;
+      padding: 10px;
+    }
+  }
+  

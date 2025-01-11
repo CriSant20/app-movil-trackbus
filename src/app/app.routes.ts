@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { authGuard} from './guards/auth.guard';
+import { AuthGuard} from './guards/auth.guard';
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', loadComponent: () => import('./login/login.page').then(m => m.LoginPage) },
@@ -7,19 +7,19 @@ export const routes: Routes = [
   { 
     path: 'user', 
     loadComponent: () => import('./user/user.page').then(m => m.UserPage),
-    canActivate: [authGuard], // Proteger ruta por rol
+    canActivate: [AuthGuard], // Proteger ruta por rol
     data: { role: 'user' } 
   },
   { 
     path: 'driver', 
     loadComponent: () => import('./driver/driver.page').then(m => m.DriverPage),
-    canActivate: [authGuard], 
+    canActivate: [AuthGuard], 
     data: { role: 'driver' } 
   },
   { 
     path: 'cobrador', 
     loadComponent: () => import('./cobrador/cobrador.page').then(m => m.CobradorPage),
-    canActivate: [authGuard], 
+    canActivate: [AuthGuard], 
     data: { role: 'controller' } 
   },
 ];
