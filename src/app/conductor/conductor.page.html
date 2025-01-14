@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seleccionar Asientos</title>
+</head>
+<body>
+  <ion-app>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Seleccionar Asientos</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    
+    <ion-content>
+      <ion-item>
+        <ion-label position="floating">Número de Filas</ion-label>
+        <ion-input type="number" [(ngModel)]="numFilas"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Número de Columnas</ion-label>
+        <ion-input type="number" [(ngModel)]="numColumnas"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Asientos VIP</ion-label>
+        <ion-input type="number" [(ngModel)]="numVIP"></ion-input>
+      </ion-item>
+      <ion-button expand="full" (click)="generarAsientos()" (keydown)="handleKeyDown($event)">Generar Asientos</ion-button>
+    
+      <div class="bus-seats" (keydown)="handleKeyDown($event)">
+        <div *ngFor="let fila of asientos; let i = index" class="fila">
+          <div *ngFor="let asiento of fila; let j = index" 
+               class="asiento" 
+               [ngClass]="{'selected': asiento.estado === 'ocupado', 'vip': asiento.tipo_asiento === 'VIP', 'reservado': asiento.estado === 'reservado'}" 
+               (click)="toggleAsiento(i, j)" 
+               (keydown)="handleKeyDown($event)">
+            {{ asiento.numero_asiento }}
+          </div>
+        </div>
+      </div>
+    </ion-content>
+  </ion-app>
+</body>
+</html>
