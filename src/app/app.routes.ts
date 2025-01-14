@@ -22,4 +22,11 @@ export const routes: Routes = [
     canActivate: [AuthGuard], 
     data: { role: 'controller' } 
   },
+
+  { 
+    path: 'conductor', 
+    loadComponent: () => import('./conductor/conductor.page').then(m => m.ConductorPage),
+    canActivate: [AuthGuard], 
+    data: { role: 'controller' } 
+  },
 ];
